@@ -26,12 +26,12 @@
   --c-blue-500: #1d4ed8;
   --c-blue-400: #3b82f6;
   --c-blue-300: #60a5fa;
-  --c-cyan:     #06b6d4;
+  --c-cyan:     #2563eb;
 
   /* Subtle cyberpunk accents */
-  --c-accent-red:    #f43f5e;
-  --c-accent-pink:   #ec4899;
-  --c-accent-purple: #8b5cf6;
+  --c-accent-red: #1d4ed8;
+  --c-accent-pink: #3b82f6;
+  --c-accent-purple: #2563eb;
 
   /* Text */
   --c-text-1: #f8fafc;
@@ -44,7 +44,7 @@
   --glass-inset-hover: inset 0 1px 2px 0 rgba(255, 255, 255, 0.2);
 
   /* Accessibility */
-  --focus-ring: 0 0 0 3px rgba(255, 95, 160, 0.28);
+  --focus-ring: 0 0 0 3px rgba(59, 130, 246, 0.28);
 
   /* Design tokens */
   --radius:     12px;
@@ -71,7 +71,7 @@ html {
 body {
   background:
     radial-gradient(ellipse 130% 80% at 15% -10%, rgba(59, 130, 246, 0.15) 0%, transparent 60%),
-    radial-gradient(ellipse 80% 60% at 95% 10%, rgba(139, 92, 246, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 60% at 95% 10%, rgba(29, 78, 216, 0.12) 0%, transparent 55%),
     var(--c-bg);
   color: var(--c-text-1);
   font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
@@ -92,7 +92,7 @@ a {
 }
 a:hover {
   color: var(--c-cyan);
-  text-shadow: 0 0 14px rgba(6, 182, 212, 0.4);
+  text-shadow: 0 0 14px rgba(37, 99, 235, 0.4);
 }
 
 /* --- LAYOUT ---------------------------------------------------- */
@@ -182,33 +182,33 @@ a:hover {
 }
 
 .tag--cyan {
-  background: rgba(6, 182, 212, 0.1);
-  border-color: rgba(6, 182, 212, 0.25);
+  background: rgba(37, 99, 235, 0.1);
+  border-color: rgba(37, 99, 235, 0.25);
   color: var(--c-cyan);
 }
 
 .tag--green {
-  background: rgba(16, 185, 129, 0.1);
-  border-color: rgba(16, 185, 129, 0.25);
-  color: #34d399;
+  background: rgba(147, 197, 253, 0.1);
+  border-color: rgba(147, 197, 253, 0.25);
+  color: #60a5fa;
 }
 
 .tag--purple {
-  background: rgba(139, 92, 246, 0.11);
-  border-color: rgba(139, 92, 246, 0.3);
-  color: #c4b5fd;
+  background: rgba(29, 78, 216, 0.11);
+  border-color: rgba(29, 78, 216, 0.3);
+  color: #93c5fd;
 }
 
 .tag--pink {
-  background: rgba(236, 72, 153, 0.11);
-  border-color: rgba(236, 72, 153, 0.3);
-  color: #f472b6;
+  background: rgba(37, 99, 235, 0.11);
+  border-color: rgba(37, 99, 235, 0.3);
+  color: #60a5fa;
 }
 
 .tag--red {
-  background: rgba(244, 63, 94, 0.11);
-  border-color: rgba(244, 63, 94, 0.3);
-  color: #fb7185;
+  background: rgba(29, 78, 216, 0.11);
+  border-color: rgba(29, 78, 216, 0.3);
+  color: #60a5fa;
 }
 
 /* --- BUTTONS --------------------------------------------------- */
@@ -323,7 +323,7 @@ a:hover {
 
 /* --- SELECTION ------------------------------------------------ */
 ::selection {
-  background: rgba(176, 119, 255, 0.34);
+  background: rgba(37, 99, 235, 0.34);
   color: var(--c-text-1);
 }
 
@@ -350,10 +350,10 @@ a:hover {
 @keyframes pulse-accent {
   0%,
   100% {
-    box-shadow: 0 0 0 rgba(255, 95, 160, 0);
+    box-shadow: 0 0 0 rgba(59, 130, 246, 0);
   }
   50% {
-    box-shadow: 0 0 20px rgba(255, 95, 160, 0.3);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
   }
 }
 
