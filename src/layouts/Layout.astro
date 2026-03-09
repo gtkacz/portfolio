@@ -12,6 +12,7 @@ const {
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://tkacz.dev.br').toString();
+const buildTime = import.meta.env.PROD ? Date.now().toString() : 'dev';
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -26,10 +27,27 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://tkacz.de
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#04091c" />
+    
+    <!-- Cache busting -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalUrl} />
     <title>{title}</title>
 
+    <script is:inline define:vars={{ buildTime }}>
+      (function() {
+        const storedVersion = localStorage.getItem('app_version');
+        if (storedVersion !== buildTime) {
+          localStorage.setItem('app_version', buildTime);
+          if (storedVersion) {
+            window.location.reload();
+          }
+        }
+      })();
+    </script>
   </head>
   <body>
     <slot />
