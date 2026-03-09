@@ -63,20 +63,10 @@
 
       <div class="hero-social" data-animate data-delay="6" aria-label="Social links">
         <a href="https://www.ieee.org/" target="_blank" rel="noopener noreferrer" class="social-link social-link--brand" title="IEEE Member">
-          <svg width="40" height="14" viewBox="0 0 64 20" fill="none" aria-hidden="true">
-            <path d="M8 2 14 10 8 18 2 10 8 2Z" stroke="currentColor" stroke-width="1.8"/>
-            <path d="M8 6v8M5 10h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <text x="20" y="13.5" font-size="9" font-family="Arial, sans-serif" font-weight="700" fill="currentColor">IEEE</text>
-          </svg>
+          <img src="/brands/ieee.svg" alt="IEEE logo" width="96" height="24" />
         </a>
         <a href="https://www.sbc.org.br/" target="_blank" rel="noopener noreferrer" class="social-link social-link--brand" title="SBC Member">
-          <svg width="34" height="14" viewBox="0 0 54 20" fill="none" aria-hidden="true">
-            <circle cx="8" cy="10" r="2.4" fill="currentColor"/>
-            <circle cx="14" cy="6" r="1.8" fill="currentColor"/>
-            <circle cx="14" cy="14" r="1.8" fill="currentColor"/>
-            <path d="M8 10h6M8 10l6-4M8 10l6 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            <text x="22" y="13.5" font-size="9" font-family="Arial, sans-serif" font-weight="700" fill="currentColor">SBC</text>
-          </svg>
+          <img src="/brands/sbc.svg" alt="SBC logo" width="88" height="24" />
         </a>
         <a href="https://orcid.org/0009-0004-3619-4561" target="_blank" rel="noopener noreferrer" class="social-link" title="ORCID">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -85,11 +75,7 @@
           ORCID
         </a>
         <a href="http://lattes.cnpq.br/9398342098329065" target="_blank" rel="noopener noreferrer" class="social-link" title="Lattes CV">
-          <svg width="44" height="14" viewBox="0 0 54 20" fill="none" aria-hidden="true">
-            <text x="1.5" y="8" font-size="4.2" font-family="Arial, sans-serif" font-weight="700" fill="currentColor">CNPq</text>
-            <path d="M1.8 11.4h12.4" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-            <text x="1.5" y="17" font-size="5.2" font-family="Arial, sans-serif" font-weight="700" fill="currentColor">Lattes</text>
-          </svg>
+          <img src="/brands/lattes.svg" alt="Lattes logo" width="120" height="24" />
           Lattes
         </a>
       </div>
@@ -265,7 +251,12 @@
     height: 14px;
   }
 
-  .hero-social .social-link[title="Lattes CV"] svg {
+  .social-link--brand img {
+    width: auto;
+    height: 14px;
+  }
+
+  .hero-social .social-link[title="Lattes CV"] img {
     width: auto;
     height: 14px;
   }

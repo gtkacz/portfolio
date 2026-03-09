@@ -11,22 +11,22 @@
 /* --- CSS VARIABLES --------------------------------------------- */
 :root {
   /* Backgrounds */
-  --c-bg:        #04091c;
-  --c-bg-alt:    #060c22;
-  --c-surface:   rgba(7, 14, 32, 0.92);
-  --c-surface-2: rgba(10, 18, 44, 0.95);
+  --c-bg:        #030716;
+  --c-bg-alt:    #050a1a;
+  --c-surface:   rgba(6, 12, 28, 0.94);
+  --c-surface-2: rgba(8, 15, 34, 0.96);
 
   /* Borders */
-  --c-border:       rgba(37, 99, 235, 0.18);
-  --c-border-hover: rgba(59, 130, 246, 0.45);
+  --c-border:       rgba(29, 78, 216, 0.2);
+  --c-border-hover: rgba(37, 99, 235, 0.38);
 
   /* Blue palette */
-  --c-blue-700: #1d4ed8;
-  --c-blue-600: #2563eb;
-  --c-blue-500: #3b82f6;
-  --c-blue-400: #60a5fa;
-  --c-blue-300: #93c5fd;
-  --c-cyan:     #22d3ee;
+  --c-blue-700: #1e3a8a;
+  --c-blue-600: #1d4ed8;
+  --c-blue-500: #2563eb;
+  --c-blue-400: #3b82f6;
+  --c-blue-300: #60a5fa;
+  --c-cyan:     #06b6d4;
 
   /* Text */
   --c-text-1: #eef2ff;
@@ -34,8 +34,8 @@
   --c-text-3: #4f6497;
 
   /* Glow */
-  --c-glow: 0 0 40px rgba(59, 130, 246, 0.14);
-  --c-glow-strong: 0 0 60px rgba(59, 130, 246, 0.22);
+  --c-glow: 0 0 34px rgba(37, 99, 235, 0.12);
+  --c-glow-strong: 0 0 52px rgba(37, 99, 235, 0.18);
 
   /* Design tokens */
   --radius:     12px;
@@ -123,14 +123,12 @@ a:hover { color: var(--c-blue-300); }
   padding: 1.5rem;
   transition:
     border-color var(--transition),
-    box-shadow var(--transition),
-    transform var(--transition);
+    box-shadow var(--transition);
 }
 
 .card:hover {
   border-color: var(--c-border-hover);
   box-shadow: var(--c-glow);
-  transform: translateY(-3px);
 }
 
 /* --- TAG / PILL ----------------------------------------------- */
@@ -190,7 +188,6 @@ a:hover { color: var(--c-blue-300); }
 .btn-primary:hover {
   background: var(--c-blue-500);
   color: #fff;
-  transform: translateY(-2px);
   box-shadow: 0 6px 24px rgba(59, 130, 246, 0.35);
 }
 
@@ -203,7 +200,6 @@ a:hover { color: var(--c-blue-300); }
   background: rgba(59, 130, 246, 0.08);
   color: var(--c-blue-300);
   border-color: var(--c-blue-400);
-  transform: translateY(-2px);
 }
 
 /* --- SCROLL ANIMATION ----------------------------------------- */
@@ -241,7 +237,6 @@ a:hover { color: var(--c-blue-300); }
   border-color: var(--c-blue-500);
   color: var(--c-blue-400);
   background: rgba(59, 130, 246, 0.08);
-  transform: translateY(-2px);
 }
 
 /* --- DIVIDER -------------------------------------------------- */

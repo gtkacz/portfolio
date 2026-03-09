@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="24" viewBox="0 0 120 24" fill="none">
+  <g fill="#60a5fa" font-family="Arial, sans-serif" font-weight="700">
+    <text x="2" y="9" font-size="6">CNPq</text>
+    <text x="2" y="19" font-size="8">Lattes</text>
+  </g>
+  <path d="M2 12h22" stroke="#60a5fa" stroke-width="1.2" opacity="0.55"/>
+</svg>

@@ -1,9 +1,13 @@
 ---
+import { getCareerStats } from '../data/profile';
+
+const careerStats = getCareerStats();
+
 const stats = [
-  { value: '3+',  label: 'Years of professional experience' },
-  { value: '4',   label: 'Companies across 3 countries' },
+  { value: `${careerStats.yearsExperience}+`, label: 'Years of professional experience' },
+  { value: `${careerStats.companies}`, label: `Companies across ${careerStats.countries} countries` },
   { value: '20+', label: 'Open source contributions' },
-  { value: '2',   label: 'Peer-reviewed publications' },
+  { value: '2', label: 'Peer-reviewed publications' },
 ];
 
 const highlights = [
@@ -107,11 +111,7 @@ const highlights = [
         </div>
 
         <div class="about-member card">
-          <svg class="member-logo" width="56" height="18" viewBox="0 0 64 20" fill="none" aria-hidden="true">
-            <path d="M8 2 14 10 8 18 2 10 8 2Z" stroke="currentColor" stroke-width="1.8"/>
-            <path d="M8 6v8M5 10h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <text x="20" y="13.5" font-size="9" font-family="Arial, sans-serif" font-weight="700" fill="currentColor">IEEE</text>
-          </svg>
+          <img class="member-logo" src="/brands/ieee.svg" alt="IEEE logo" width="56" height="18" />
           <div>
             <p class="location-city">Member</p>
             <p class="location-country">Institute of Electrical and Electronics Engineers</p>
@@ -119,13 +119,7 @@ const highlights = [
         </div>
 
         <div class="about-member card">
-          <svg class="member-logo" width="48" height="18" viewBox="0 0 54 20" fill="none" aria-hidden="true">
-            <circle cx="8" cy="10" r="2.4" fill="currentColor"/>
-            <circle cx="14" cy="6" r="1.8" fill="currentColor"/>
-            <circle cx="14" cy="14" r="1.8" fill="currentColor"/>
-            <path d="M8 10h6M8 10l6-4M8 10l6 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            <text x="22" y="13.5" font-size="9" font-family="Arial, sans-serif" font-weight="700" fill="currentColor">SBC</text>
-          </svg>
+          <img class="member-logo" src="/brands/sbc.svg" alt="SBC logo" width="48" height="18" />
           <div>
             <p class="location-city">Member</p>
             <p class="location-country">Brazilian Computer Society</p>
@@ -208,7 +202,8 @@ const highlights = [
   .about-member svg { flex-shrink: 0; }
 
   .member-logo {
-    color: var(--c-blue-400);
+    width: auto;
+    height: 18px;
   }
   .location-city {
     font-size: 0.875rem;

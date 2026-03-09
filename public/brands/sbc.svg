@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="24" viewBox="0 0 88 24" fill="none">
+  <g stroke="#60a5fa" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="8" cy="12" r="2.4" fill="#60a5fa" stroke="none"/>
+    <circle cx="14.5" cy="7.5" r="1.8" fill="#60a5fa" stroke="none"/>
+    <circle cx="14.5" cy="16.5" r="1.8" fill="#60a5fa" stroke="none"/>
+    <path d="M8 12h6.5M8 12l6.5-4.5M8 12l6.5 4.5" stroke-width="1.5"/>
+  </g>
+  <g fill="#60a5fa" font-family="Arial, sans-serif" font-weight="700" font-size="12">
+    <text x="26" y="16">SBC</text>
+  </g>
+</svg>
