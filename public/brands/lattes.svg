@@ -1,7 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="120" height="24" viewBox="0 0 120 24" fill="none">
-  <g fill="#60a5fa" font-family="Arial, sans-serif" font-weight="700">
-    <text x="2" y="9" font-size="6">CNPq</text>
-    <text x="2" y="19" font-size="8">Lattes</text>
+<svg viewBox="0 0 200 200" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <g fill="currentColor">
+    <path d="M 40,130 L 78,136 C 70,95 85,55 160,60 C 125,25 45,25 40,130 Z" />
+    
+    <path d="M 43,138 L 81,144 C 98,175 145,175 180,105 C 188,145 150,190 80,185 C 60,183 48,165 43,138 Z" />
+    
+    <circle cx="108" cy="90" r="30" />
   </g>
-  <path d="M2 12h22" stroke="#60a5fa" stroke-width="1.2" opacity="0.55"/>
 </svg>

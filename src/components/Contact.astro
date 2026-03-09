@@ -36,7 +36,7 @@ const links = [
     icon: `<path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.516.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 3.988-2.484 3.988-3.722 0-2.016-1.284-3.722-4.094-3.722h-2.191z"/>`,
   },
   {
-    label: 'Lattes / CNPq',
+    label: 'CNPq Lattes',
     href:  'http://lattes.cnpq.br/9398342098329065',
     desc:  'Academic CV and publications',
     kind: 'brand',
@@ -55,9 +55,9 @@ const links = [
     <div class="contact-inner">
       <div class="contact-text" data-animate data-delay="1">
         <p>
-          I'm available for <strong>freelance engineering work</strong>, focused technical consulting,
-          research collaborations, and selected product builds.
-          Whether you're a recruiter, a fellow engineer, or a researcher — my inbox is open.
+          I am available for <strong>freelance engineering work</strong>, focused technical
+          consulting, research collaborations, and selected product builds. Whether you are a
+          recruiter, a fellow engineer, or a researcher, my inbox is always open.
         </p>
         <p>The best way to reach me is via email:</p>
         <a href="mailto:gabriel@tkacz.dev.br" class="email-link">
@@ -117,18 +117,19 @@ const links = [
     gap: 0.6rem;
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--c-blue-400);
+    color: var(--c-blue-300);
     padding: 0.75rem 1.25rem;
-    border: 1px solid var(--c-border-hover);
+    border: 1px solid rgba(124, 167, 255, 0.45);
     border-radius: var(--radius);
     transition: all var(--transition);
-    background: rgba(59, 130, 246, 0.05);
+    background: linear-gradient(135deg, rgba(61, 122, 224, 0.11) 0%, rgba(176, 119, 255, 0.09) 100%);
   }
   .email-link:hover {
-    color: var(--c-blue-300);
-    background: rgba(59, 130, 246, 0.1);
-    border-color: var(--c-blue-400);
-    box-shadow: var(--c-glow);
+    color: var(--c-accent-pink);
+    background: linear-gradient(135deg, rgba(61, 122, 224, 0.14) 0%, rgba(255, 95, 160, 0.13) 100%);
+    border-color: rgba(255, 95, 160, 0.52);
+    box-shadow: var(--c-glow), var(--c-glow-pink);
+    text-shadow: 0 0 12px rgba(255, 95, 160, 0.4);
     text-decoration: none;
   }
 
@@ -147,7 +148,11 @@ const links = [
     text-decoration: none;
     transition: all var(--transition);
   }
-  .contact-link-card:hover { text-decoration: none; }
+  .contact-link-card:hover {
+    text-decoration: none;
+    border-color: rgba(176, 119, 255, 0.45);
+    box-shadow: var(--c-glow), inset 0 0 18px rgba(176, 119, 255, 0.08);
+  }
 
   .clc-icon {
     display: flex;
@@ -156,10 +161,10 @@ const links = [
     width: 2.5rem;
     height: 2.5rem;
     border-radius: var(--radius-sm);
-    background: rgba(59, 130, 246, 0.1);
+    background: linear-gradient(135deg, rgba(61, 122, 224, 0.16) 0%, rgba(176, 119, 255, 0.13) 100%);
     color: var(--c-blue-400);
     flex-shrink: 0;
-    transition: background var(--transition), color var(--transition);
+    transition: background var(--transition), color var(--transition), transform var(--transition), box-shadow var(--transition);
   }
 
   .clc-icon--wide {
@@ -173,8 +178,10 @@ const links = [
     height: 16px;
   }
   .contact-link-card:hover .clc-icon {
-    background: rgba(59, 130, 246, 0.2);
-    color: var(--c-blue-300);
+    background: linear-gradient(135deg, rgba(61, 122, 224, 0.2) 0%, rgba(255, 95, 160, 0.18) 100%);
+    color: var(--c-accent-pink);
+    transform: translateY(-1px);
+    box-shadow: 0 0 14px rgba(255, 95, 160, 0.2);
   }
 
   .clc-label {
@@ -193,14 +200,23 @@ const links = [
     color: var(--c-text-3);
     flex-shrink: 0;
     opacity: 0;
-    transition: opacity var(--transition), color var(--transition);
+    transition: opacity var(--transition), color var(--transition), transform var(--transition);
   }
   .contact-link-card:hover .clc-arrow {
     opacity: 1;
-    color: var(--c-blue-400);
+    color: var(--c-accent-pink);
+    transform: translateX(3px);
   }
 
   @media (max-width: 768px) {
     .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+
+  @media (max-width: 540px) {
+    .email-link {
+      width: 100%;
+      justify-content: center;
+      font-size: 1rem;
+    }
   }
 </style>

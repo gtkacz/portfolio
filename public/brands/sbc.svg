@@ -1,11 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="88" height="24" viewBox="0 0 88 24" fill="none">
-  <g stroke="#60a5fa" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="8" cy="12" r="2.4" fill="#60a5fa" stroke="none"/>
-    <circle cx="14.5" cy="7.5" r="1.8" fill="#60a5fa" stroke="none"/>
-    <circle cx="14.5" cy="16.5" r="1.8" fill="#60a5fa" stroke="none"/>
-    <path d="M8 12h6.5M8 12l6.5-4.5M8 12l6.5 4.5" stroke-width="1.5"/>
-  </g>
-  <g fill="#60a5fa" font-family="Arial, sans-serif" font-weight="700" font-size="12">
-    <text x="26" y="16">SBC</text>
-  </g>
+<svg viewBox="0 0 100 120" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <mask id="sbc-cutout">
+      <path d="M 10 10 L 10 115 L 90 115 L 90 85 C 90 85, 95 75, 95 60 C 95 30, 75 10, 50 10 L 10 10 Z" fill="white" />
+      
+      <path d="M 18 25 C 35 50, 70 55, 95 40 C 75 55, 40 45, 18 15 Z" fill="black" />
+      
+      <path d="M 18 65 C 35 40, 70 35, 95 50 C 75 35, 40 45, 18 75 Z" fill="black" />
+      
+      <text x="50" y="108" font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="26" letter-spacing="-1" text-anchor="middle" fill="black">SBC</text>
+    </mask>
+  </defs>
+  
+  <rect width="100" height="120" fill="currentColor" mask="url(#sbc-cutout)" />
 </svg>

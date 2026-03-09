@@ -18,9 +18,9 @@ export const jobs: Job[] = [
     location: 'Jacksonville, FL, USA · Remote',
     current: true,
     bullets: [
-      'Designed, developed, and maintained bespoke eCommerce solutions tailored to client needs on a multi-tenant SaaS platform.',
+      'Designed, developed, and maintained custom eCommerce solutions tailored to client requirements on a multi-tenant SaaS platform.',
       'Engineered full-stack solutions using Vue.js + TypeScript for front-end, Java (Spring Boot, jOOQ) for back-end, AWS for cloud automation, and Flyway/PostgreSQL for data management.',
-      'Developed custom ML models to streamline customer product categorization and publishing workflows.',
+      'Developed custom machine learning models to streamline customer product categorization and publishing workflows.',
       'Built an in-app chatbot using RAG and LLM APIs, significantly reducing customer support and onboarding time.',
       'Delivered customer-facing REST APIs for advanced programmatic platform usage.',
     ],
@@ -38,7 +38,7 @@ export const jobs: Job[] = [
       'Engineered hydric prediction models and other data science tools to support energy trading operations.',
       'Managed the full software development lifecycle from requirements gathering to production deployment.',
     ],
-    tags: ['Python', 'Django', 'Vue.js', 'Docker', 'PostgreSQL', 'Data Science', 'ML'],
+    tags: ['Python', 'Django', 'Vue.js', 'Docker', 'PostgreSQL', 'Data Science', 'Machine Learning'],
   },
   {
     period: '2022 – 2024',
@@ -47,7 +47,7 @@ export const jobs: Job[] = [
     companyUrl: 'https://gscap.com.br/',
     location: 'São Paulo, SP, Brazil',
     bullets: [
-      'Built post-trade systems — web tools, REST APIs, and data conciliation & automated billing routines — for Latin America\'s largest quantitative asset manager.',
+      'Built post-trade systems for Latin America\'s largest quantitative asset manager, including web tooling, REST APIs, data conciliation pipelines, and automated billing routines.',
       'Engineered worldwide stock exchange messaging systems and critical data engineering pipelines handling billions in transactions.',
       'Utilized Python (Django, Flask, DRF, Graphene), Apache Kafka, Airflow, PostgreSQL, and AWS services.',
       'Built front-end management interfaces with TypeScript, Vue.js, and Vuetify consuming from internal APIs.',

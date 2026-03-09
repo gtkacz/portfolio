@@ -26,8 +26,10 @@
       </div>
 
       <p class="hero-bio" data-animate data-delay="4">
-        I build blazing-fast backends, intelligent ML pipelines, and beautiful UIs —
-        and believe every line of code is an opportunity to make software better for everyone.
+        I design and build production-grade distributed backends, end-to-end machine learning pipelines, and
+        accessible full-stack web applications. My work spans quantitative finance, energy
+        trading, and global eCommerce automation across three countries. IEEE member, academic
+        researcher, and active FOSS contributor.
         Based in <span class="accent">São Paulo, Brazil</span>.
       </p>
 
@@ -123,9 +125,11 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 90% 60% at 50% -10%, rgba(37, 99, 235, 0.2) 0%, transparent 70%),
-      radial-gradient(ellipse 50% 40% at 85% 90%, rgba(34, 211, 238, 0.06) 0%, transparent 60%);
+      radial-gradient(ellipse 90% 60% at 50% -10%, rgba(59, 130, 246, 0.15) 0%, transparent 70%),
+      radial-gradient(ellipse 45% 35% at 82% 88%, rgba(6, 182, 212, 0.08) 0%, transparent 65%),
+      radial-gradient(ellipse 40% 25% at 15% 82%, rgba(139, 92, 246, 0.08) 0%, transparent 65%);
     pointer-events: none;
+    filter: blur(40px);
   }
 
   /* Dot grid */
@@ -133,7 +137,7 @@
     position: absolute;
     inset: 0;
     background-image:
-      radial-gradient(rgba(99, 145, 230, 0.12) 1px, transparent 1px);
+      radial-gradient(rgba(146, 176, 240, 0.16) 1px, transparent 1px);
     background-size: 32px 32px;
     mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 75%);
     pointer-events: none;
@@ -202,10 +206,17 @@
     font-size: 0.8rem;
     font-weight: 500;
     border-radius: var(--radius-pill);
-    background: rgba(59, 130, 246, 0.1);
-    border: 1px solid rgba(59, 130, 246, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--c-blue-300);
     letter-spacing: 0.01em;
+    transition: border-color var(--transition), background var(--transition);
+  }
+  .role-pill:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.1);
   }
   .role-sep {
     color: var(--c-text-3);
@@ -220,7 +231,11 @@
     line-height: 1.75;
     margin-bottom: 2rem;
   }
-  .hero-bio .accent { color: var(--c-blue-400); font-weight: 500; }
+  .hero-bio .accent {
+    color: var(--c-accent-pink);
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(255, 95, 160, 0.25);
+  }
 
   /* CTA buttons */
   .hero-actions {
@@ -242,9 +257,11 @@
     gap: 0.4rem;
     font-size: 0.8rem;
     color: var(--c-text-3);
-    transition: color var(--transition);
+    transition: color 0.3s;
   }
-  .social-link:hover { color: var(--c-blue-400); }
+  .social-link:hover {
+    color: var(--c-text-1);
+  }
 
   .social-link--brand svg {
     width: auto;
@@ -272,7 +289,8 @@
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    border: 1px solid var(--c-border);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.02);
     animation: spin 18s linear infinite;
   }
   .ring-1 { inset: 0;         }
@@ -287,23 +305,25 @@
     width: 128px;
     height: 128px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.35) 0%, rgba(37, 99, 235, 0.08) 70%);
-    border: 1px solid var(--c-border-hover);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: glow-pulse 3s ease-in-out infinite;
+    animation: glass-pulse 4s ease-in-out infinite;
   }
   .core-text {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.82rem;
     font-weight: 700;
-    color: var(--c-blue-400);
+    color: var(--c-text-1);
     letter-spacing: -0.03em;
   }
-  @keyframes glow-pulse {
-    0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.2); }
-    50%       { box-shadow: 0 0 40px rgba(59, 130, 246, 0.4); }
+  @keyframes glass-pulse {
+    0%, 100% { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); border-color: rgba(255, 255, 255, 0.15); }
+    50%       { box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); border-color: rgba(255, 255, 255, 0.25); }
   }
 
   /* Satellites */
@@ -317,6 +337,11 @@
     border-radius: 50%;
     background: var(--c-surface-2);
     border: 1px solid var(--c-border);
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  }
+  .hero-visual:hover .orbit-satellite {
+    border-color: rgba(176, 119, 255, 0.45);
+    box-shadow: 0 0 14px rgba(176, 119, 255, 0.2);
   }
   .s1 { top: 0;    left: 50%;  transform: translate(-50%, -50%); }
   .s2 { top: 50%;  right: 0;   transform: translate(50%, -50%); }
@@ -330,9 +355,11 @@
     transform: translateX(-50%);
     color: var(--c-text-3);
     animation: bounce 2s ease-in-out infinite;
-    transition: color var(--transition);
+    transition: color 0.3s;
   }
-  .scroll-cue:hover { color: var(--c-blue-400); }
+  .scroll-cue:hover {
+    color: var(--c-text-1);
+  }
   @keyframes bounce {
     0%, 100% { transform: translateX(-50%) translateY(0); }
     50%       { transform: translateX(-50%) translateY(6px); }
@@ -345,6 +372,14 @@
   }
   @media (max-width: 480px) {
     .hero-name { font-size: clamp(2rem, 9vw, 3rem); }
-    .hero-actions { flex-direction: column; width: fit-content; }
+    .hero-actions {
+      flex-direction: column;
+      width: 100%;
+      max-width: 20rem;
+    }
+    .hero-actions .btn {
+      width: 100%;
+      justify-content: center;
+    }
   }
 </style>

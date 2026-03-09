@@ -19,7 +19,7 @@ const ownProjects: OwnProject[] = [
     name:      'temporal-adjusters-py',
     lang:      'Python',
     langColor: 'var(--c-blue-400)',
-    desc:      'Temporal date adjustment utilities for Python — port of Java\'s TemporalAdjusters.',
+    desc:      'Temporal date adjustment utilities for Python, porting the semantics of Java\'s TemporalAdjusters to the Python ecosystem.',
     url:       'https://github.com/gtkacz/temporal_adjusters_py',
     pypi:      'https://pypi.org/project/temporal-adjuster/',
   },
@@ -27,7 +27,7 @@ const ownProjects: OwnProject[] = [
     name:      'smart-commit-rs',
     lang:      'Rust',
     langColor: '#fb923c',
-    desc:      'Blazing-fast CLI tool for generating structured, conventional commit messages.',
+    desc:      'CLI tool for generating structured, conventional commit messages, written in Rust for fast startup and a minimal resource footprint.',
     url:       'https://github.com/gtkacz/smart-commit-rs',
   },
   {
@@ -78,7 +78,7 @@ const ownProjects: OwnProject[] = [
 const contribProjects: ContribProject[] = [
   { name: 'Ruff',                    url: 'https://github.com/astral-sh/ruff',                    desc: 'An extremely fast Python linter and formatter, written in Rust' },
   { name: 'Django REST Framework',   url: 'https://github.com/encode/django-rest-framework',       desc: 'Powerful and flexible toolkit for building Web APIs in Django' },
-  { name: 'OpenBB',                  url: 'https://github.com/OpenBB-finance/OpenBB',              desc: 'Investment research platform — the open-source Bloomberg alternative' },
+  { name: 'OpenBB',                  url: 'https://github.com/OpenBB-finance/OpenBB',              desc: 'Investment research platform, the open-source Bloomberg alternative' },
   { name: 'python-dateutil',         url: 'https://github.com/dateutil/dateutil',                  desc: 'Powerful extensions to the standard datetime module' },
   { name: 'whenever',                url: 'https://github.com/ariebovenberg/whenever',             desc: 'Modern datetime library for Python with clear timezone semantics' },
   { name: 'more-itertools',          url: 'https://github.com/more-itertools/more-itertools',      desc: 'More routines for operating on iterables, beyond itertools' },
@@ -193,7 +193,10 @@ const contribProjects: ContribProject[] = [
     color: var(--c-text-3);
     margin-bottom: 1.25rem;
   }
-  .oss-icon { color: var(--c-blue-400); flex-shrink: 0; }
+  .oss-icon {
+    color: var(--c-accent-purple);
+    flex-shrink: 0;
+  }
 
   /* Own projects grid */
   .own-projects-grid {
@@ -208,15 +211,29 @@ const contribProjects: ContribProject[] = [
     gap: 0.6rem;
     text-decoration: none;
     padding: 1.1rem 1.25rem;
+    transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
   }
-  .own-project-card:hover { text-decoration: none; }
+  .own-project-card:hover {
+    text-decoration: none;
+    border-color: rgba(176, 119, 255, 0.45);
+    box-shadow: var(--c-glow), inset 0 0 18px rgba(176, 119, 255, 0.07);
+  }
 
   .opc-header {
     display: flex;
     align-items: center;
     gap: 0.5rem;
   }
-  .opc-icon { color: var(--c-blue-500); flex-shrink: 0; }
+  .opc-icon {
+    color: var(--c-blue-400);
+    flex-shrink: 0;
+    transition: transform var(--transition), color var(--transition), filter var(--transition);
+  }
+  .own-project-card:hover .opc-icon {
+    color: var(--c-accent-pink);
+    transform: translateX(2px) rotate(-10deg);
+    filter: drop-shadow(0 0 10px rgba(255, 95, 160, 0.45));
+  }
   .opc-name {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.8rem;
@@ -232,13 +249,18 @@ const contribProjects: ContribProject[] = [
     font-size: 0.65rem;
     padding: 0.15em 0.5em;
     border-radius: var(--radius-pill);
-    background: rgba(0,0,0,0.3);
+    background: rgba(5, 10, 24, 0.5);
     color: var(--lang-color, var(--c-blue-400));
     font-family: 'JetBrains Mono', monospace;
     font-weight: 500;
     flex-shrink: 0;
     border: 1px solid currentColor;
     opacity: 0.8;
+    transition: box-shadow var(--transition), opacity var(--transition);
+  }
+  .own-project-card:hover .opc-lang {
+    opacity: 1;
+    box-shadow: 0 0 12px rgba(124, 167, 255, 0.32);
   }
 
   .opc-desc {
@@ -261,10 +283,14 @@ const contribProjects: ContribProject[] = [
     font-size: 0.7rem;
     color: var(--c-text-3);
     font-family: 'JetBrains Mono', monospace;
-    transition: color var(--transition);
+    transition: color var(--transition), transform var(--transition), text-shadow var(--transition);
   }
   .own-project-card:hover .opc-github-link,
-  .own-project-card:hover .opc-pypi-link { color: var(--c-blue-400); }
+  .own-project-card:hover .opc-pypi-link {
+    color: var(--c-accent-pink);
+    transform: translateX(2px);
+    text-shadow: 0 0 10px rgba(255, 95, 160, 0.32);
+  }
 
   /* Contrib grid */
   .contrib-grid {
@@ -280,17 +306,22 @@ const contribProjects: ContribProject[] = [
     padding: 0.875rem 1rem;
     text-decoration: none;
     border-radius: var(--radius-sm);
+    transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
   }
-  .contrib-item:hover { text-decoration: none; }
+  .contrib-item:hover {
+    text-decoration: none;
+    border-color: rgba(176, 119, 255, 0.42);
+    box-shadow: inset 0 0 16px rgba(176, 119, 255, 0.07);
+  }
 
   .contrib-name {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--c-blue-400);
+    color: var(--c-blue-300);
     transition: color var(--transition);
   }
-  .contrib-item:hover .contrib-name { color: var(--c-blue-300); }
+  .contrib-item:hover .contrib-name { color: var(--c-accent-purple); }
 
   .contrib-desc {
     font-size: 0.78rem;

@@ -126,8 +126,18 @@ const typeIcon: Record<Degree['type'], string> = {
     gap: 1rem;
   }
 
-  .edu-card { padding: 1.25rem 1.5rem; }
-  .edu-card--current { border-color: rgba(59, 130, 246, 0.35); }
+  .edu-card {
+    padding: 1.25rem 1.5rem;
+    transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  }
+  .edu-card:hover {
+    border-color: rgba(176, 119, 255, 0.4);
+    box-shadow: var(--c-glow), inset 0 0 16px rgba(176, 119, 255, 0.08);
+  }
+  .edu-card--current {
+    border-color: rgba(255, 95, 160, 0.45);
+    box-shadow: inset 0 0 18px rgba(255, 95, 160, 0.08);
+  }
 
   .edu-header {
     display: flex;
@@ -139,6 +149,12 @@ const typeIcon: Record<Degree['type'], string> = {
     color: var(--c-blue-400);
     flex-shrink: 0;
     margin-top: 0.2rem;
+    transition: color var(--transition), transform var(--transition), filter var(--transition);
+  }
+  .edu-card:hover .edu-icon {
+    color: var(--c-accent-pink);
+    transform: rotate(-10deg);
+    filter: drop-shadow(0 0 10px rgba(255, 95, 160, 0.4));
   }
 
   .edu-meta {
@@ -151,7 +167,7 @@ const typeIcon: Record<Degree['type'], string> = {
   .edu-period {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.72rem;
-    color: var(--c-blue-400);
+    color: var(--c-accent-purple);
     font-weight: 500;
   }
 
@@ -164,7 +180,7 @@ const typeIcon: Record<Degree['type'], string> = {
 
   .edu-field {
     font-size: 0.9rem;
-    color: var(--c-blue-400);
+    color: var(--c-blue-300);
     font-weight: 500;
     margin-bottom: 0.2rem;
   }
@@ -203,16 +219,25 @@ const typeIcon: Record<Degree['type'], string> = {
     align-items: flex-start;
     padding: 0.875rem 0;
     border-bottom: 1px solid var(--c-border);
+    transition: border-color var(--transition), transform var(--transition);
   }
   .cert-item:last-child { border-bottom: none; }
+  .cert-item:hover {
+    border-bottom-color: rgba(176, 119, 255, 0.45);
+  }
 
   .cert-dot {
     flex-shrink: 0;
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: var(--c-blue-500);
+    background: var(--c-accent-pink);
     margin-top: 0.45rem;
+    transition: box-shadow var(--transition), transform var(--transition);
+  }
+  .cert-item:hover .cert-dot {
+    box-shadow: 0 0 10px rgba(255, 95, 160, 0.45);
+    transform: scale(1.08);
   }
 
   .cert-name {

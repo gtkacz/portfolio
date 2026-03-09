@@ -13,12 +13,12 @@ const stats = [
 const highlights = [
   {
     className: 'tag tag--cyan',
-    label: 'Performance-obsessed backend',
+    label: 'High-throughput backend systems',
     icon: '<path d="M13 2 3 14h7l-1 8 10-12h-7z" />',
   },
   {
     className: 'tag tag--purple',
-    label: 'ML / AI pipelines',
+    label: 'Machine learning',
     icon: '<path d="M12 3v4" /><path d="M12 17v4" /><path d="M3 12h4" /><path d="M17 12h4" /><rect x="7" y="7" width="10" height="10" rx="2" /><path d="M9.5 9.5h5v5h-5z" />',
   },
   {
@@ -53,30 +53,39 @@ const highlights = [
     <div class="about-grid">
       <div class="about-text" data-animate data-delay="1">
         <p>
-          I'm a <strong>full-stack software engineer</strong> based in São Paulo, Brazil, with a
-          strong foundation across the entire product lifecycle — from designing high-throughput
-          distributed systems and optimizing database queries, to building machine learning
-          pipelines and crafting polished, accessible user interfaces.
+          I'm a <strong>full-stack software engineer</strong> based in São Paulo, Brazil, with
+          hands-on experience across the entire product lifecycle: architecting distributed systems
+          and optimizing database schemas at scale, training and deploying production machine learning models,
+          designing REST and GraphQL APIs, and crafting polished, accessible user interfaces.
         </p>
         <p>
-          My professional journey has taken me through <strong>quantitative finance</strong>
-          (Giant Steps Capital, Latin America's largest quant fund), <strong>energy trading</strong>
-          (Libra Energia), and <strong>global eCommerce automation</strong> (FlxPoint), giving me
-          a unique cross-domain perspective on what makes software <em>truly work</em> in production.
+          My professional track record spans three distinct domains: at <strong>Giant Steps Capital</strong>,
+          Latin America's largest quantitative asset manager, I built post-trade systems and
+          data engineering pipelines handling billions of dollars in daily transactions; at
+          <strong>Libra Energia</strong>, I led the containerization of the full internal application
+          stack and engineered data science tools for hydric forecasting; and at
+          <strong>FlxPoint</strong>, a US-based multi-tenant eCommerce SaaS platform, I currently
+          build custom machine learning-powered catalog solutions and REST APIs for enterprise clients. Each
+          environment has demanded a different mix of technical depth, system reliability, and
+          cross-functional collaboration.
         </p>
         <p>
-          I'm a genuine <strong>FOSS believer</strong> — I've authored and maintain several
-          open-source libraries, and actively contribute to projects like Ruff, Django REST
-          Framework, OpenBB, and more. Building in the open is how I give back to the community
-          that shaped me as an engineer.
+          Open-source software has shaped how I work and think as an engineer. I author and
+          maintain several <strong>FOSS libraries</strong>, spanning Python date utilities, Rust CLI
+          tooling, pre-commit hooks, and GitHub Actions for static analysis and dead-code detection.
+          I also contribute to widely-used projects including Ruff, Django REST Framework, OpenBB,
+          and more. Building in the open is one of the clearest ways I can give back to the
+          developer community that shaped me.
         </p>
         <p>
-          Currently completing a <strong>Master's degree</strong> at Mackenzie Presbyterian
-          University, where my research focuses on multimodal drone detection using computer vision,
-          radar, and radio frequency analysis. My undergraduate thesis — a quantitative study on
-          image preprocessing for dermatological AI — is under review at
-          <em>IEEE Transactions on Image Processing</em>. I'm also a member of
-          <strong>IEEE</strong> and <strong>SBC</strong> (Brazilian Computer Society).
+          I am currently completing a <strong>Master's degree</strong> in Electrical Engineering
+          and Computing at Mackenzie Presbyterian University, with research centered on multimodal
+          drone detection through fusion of deep learning-based computer vision, radar signal
+          processing, and radio frequency analysis. My undergraduate thesis, a quantitative
+          evaluation of image preprocessing's effect on dermatological AI accuracy using the
+          HAM10000 dataset, is under review at <em>IEEE Transactions on Image Processing</em>.
+          I am an active member of <strong>IEEE</strong> and the
+          <strong>Brazilian Computer Society (SBC)</strong>.
         </p>
 
         <div class="about-highlights">
@@ -146,6 +155,9 @@ const highlights = [
   }
   .about-text strong { color: var(--c-text-1); font-weight: 600; }
   .about-text em     { color: var(--c-blue-400); font-style: normal; font-weight: 500; }
+  .about-text em {
+    color: var(--c-accent-purple);
+  }
 
   .about-highlights {
     display: flex;
@@ -162,6 +174,12 @@ const highlights = [
 
   .highlight-icon {
     flex-shrink: 0;
+    color: currentColor;
+    transition: transform var(--transition);
+  }
+
+  .about-highlights .tag:hover .highlight-icon {
+    transform: rotate(-8deg) scale(1.05);
   }
 
   /* Stats column */
@@ -176,6 +194,11 @@ const highlights = [
   .stat-card {
     text-align: center;
     padding: 1.25rem 1rem;
+    transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  }
+  .stat-card:hover {
+    border-color: rgba(176, 119, 255, 0.45);
+    box-shadow: var(--c-glow), inset 0 0 16px rgba(176, 119, 255, 0.08);
   }
   .stat-value {
     display: block;
@@ -184,6 +207,10 @@ const highlights = [
     line-height: 1;
     margin-bottom: 0.4rem;
     letter-spacing: -0.03em;
+    transition: text-shadow var(--transition);
+  }
+  .stat-card:hover .stat-value {
+    text-shadow: 0 0 16px rgba(176, 119, 255, 0.5);
   }
   .stat-label {
     font-size: 0.8rem;
@@ -197,6 +224,12 @@ const highlights = [
     align-items: center;
     gap: 0.75rem;
     padding: 0.875rem 1rem;
+    transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  }
+  .about-location:hover,
+  .about-member:hover {
+    border-color: rgba(255, 95, 160, 0.42);
+    box-shadow: inset 0 0 16px rgba(255, 95, 160, 0.08);
   }
   .about-location svg,
   .about-member svg { flex-shrink: 0; }
