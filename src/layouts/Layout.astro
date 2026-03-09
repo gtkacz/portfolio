@@ -10,6 +10,8 @@ const {
   title = 'Gabriel Mitelman Tkacz — Software Engineer',
   description = 'Full-stack software engineer and AI researcher based in São Paulo, Brazil. Backend optimization, ML pipelines, beautiful UIs, and a FOSS advocate.',
 } = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://tkacz.dev.br').toString();
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -18,12 +20,14 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="author" content="Gabriel Mitelman Tkacz" />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#04091c" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalUrl} />
     <title>{title}</title>
 
   </head>

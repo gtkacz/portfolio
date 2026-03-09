@@ -108,7 +108,9 @@ const contribProjects: ContribProject[] = [
     <!-- Creator / Maintainer -->
     <div data-animate data-delay="1">
       <h3 class="oss-section-title">
-        <span class="oss-icon" aria-hidden="true">★</span>
+        <svg class="oss-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3 6.4 20.2l1.1-6.2L3 9.6l6.2-.9Z" />
+        </svg>
         Creator &amp; Core Maintainer
       </h3>
       <div class="own-projects-grid">
@@ -144,7 +146,9 @@ const contribProjects: ContribProject[] = [
     <!-- Contributor -->
     <div data-animate data-delay="2" style="margin-top: 3.5rem;">
       <h3 class="oss-section-title">
-        <span class="oss-icon" aria-hidden="true">◆</span>
+        <svg class="oss-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m12 3 9 9-9 9-9-9 9-9Z" />
+        </svg>
         Notable Contributions
       </h3>
       <div class="contrib-grid">
@@ -189,7 +193,7 @@ const contribProjects: ContribProject[] = [
     color: var(--c-text-3);
     margin-bottom: 1.25rem;
   }
-  .oss-icon { color: var(--c-blue-400); font-size: 0.9rem; }
+  .oss-icon { color: var(--c-blue-400); flex-shrink: 0; }
 
   /* Own projects grid */
   .own-projects-grid {
