@@ -1,0 +1,291 @@
+---
+---
+<section class="section" id="research">
+  <div class="container">
+    <header data-animate>
+      <p class="section-label">// research</p>
+      <h2 class="section-title">Academic Research</h2>
+    </header>
+
+    <!-- Undergraduate Thesis / IEEE Paper -->
+    <article class="research-card card featured-card" data-animate data-delay="1">
+      <div class="research-header">
+        <div class="research-badge-row">
+          <span class="research-badge badge--ieee">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            IEEE Transactions on Image Processing
+          </span>
+          <span class="tag tag--cyan">Under Review</span>
+          <span class="research-year">2024</span>
+        </div>
+
+        <h3 class="research-title">
+          Quantitative Analysis of the Impact of Image Preprocessing on the
+          Accuracy of Computer Vision Models Trained for the Identification
+          of Cutaneous Dermatological Diseases
+        </h3>
+
+        <p class="research-authors">
+          <strong>Gabriel Mitelman Tkacz</strong>
+          <span class="orcid-link">
+            <a href="https://orcid.org/0009-0004-3619-4561" target="_blank" rel="noopener noreferrer" title="ORCID">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--c-cyan)" aria-label="ORCID"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.516.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 3.988-2.484 3.988-3.722 0-2.016-1.284-3.722-4.094-3.722h-2.191z"/></svg>
+            </a>
+          </span>
+          &amp; Gustavo Scalabrini Sampaio
+          <span class="funding-note">· Funded by CAPES Foundation</span>
+        </p>
+      </div>
+
+      <p class="research-abstract">
+        A systematic quantitative study evaluating the impact of image preprocessing pipelines
+        on CNNs trained to classify dermatological skin diseases using the HAM10000 dataset.
+        Introduced the <em>weighted alpha (α<sub>w</sub>)</em> metric to integrate computational
+        cost into accuracy gain evaluation. Tested 64 distinct preprocessing combinations —
+        revealing that simpler pipelines often yield superior cost-adjusted performance, and
+        that baseline model accuracy fundamentally modulates preprocessing effectiveness
+        (ceiling effect). Top pipeline achieved +9.5% accuracy gain with 13× computational
+        efficiency advantage.
+      </p>
+
+      <details class="abstract-expand">
+        <summary>Key Findings</summary>
+        <ul class="findings-list">
+          <li>Best single preprocessing: Equalization alone (+8% α, α<sub>w</sub> = 10.97)</li>
+          <li>Best multi-step: E → CS → N achieving max gain with α<sub>w</sub> = 13.17</li>
+          <li>~50% of all tested pipelines actively <em>degraded</em> model performance</li>
+          <li>Denoising operations impose 6.5× baseline training overhead</li>
+          <li>Ceiling effect compresses preprocessing benefits 24× near 100% accuracy baselines</li>
+        </ul>
+      </details>
+
+      <div class="research-tags">
+        <span class="tag">Computer Vision</span>
+        <span class="tag">Image Preprocessing</span>
+        <span class="tag">CNNs</span>
+        <span class="tag">Dermatology AI</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">HAM10000</span>
+        <span class="tag">CADe / CADx</span>
+        <span class="tag tag--purple">CUDA Accelerated</span>
+      </div>
+    </article>
+
+    <!-- Master's Thesis -->
+    <article class="research-card card" data-animate data-delay="2" style="margin-top:1.25rem;">
+      <div class="research-header">
+        <div class="research-badge-row">
+          <span class="research-badge badge--masters">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            Master's Thesis
+          </span>
+          <span class="tag tag--purple">In Progress · 2026–2027</span>
+        </div>
+
+        <h3 class="research-title">
+          Multimodal Drone Detection System
+        </h3>
+
+        <p class="research-authors">
+          <strong>Gabriel Mitelman Tkacz</strong>
+          · Mackenzie Presbyterian University
+        </p>
+      </div>
+
+      <p class="research-abstract">
+        Developing a multimodal drone detection and classification system that fuses
+        heterogeneous sensor data streams to achieve robust detection across varied
+        environments and drone classes. The system combines deep learning–based computer
+        vision with radio frequency (RF) spectrum analysis and radar signal processing,
+        exploring early, late, and hybrid fusion strategies to maximize detection accuracy
+        and reduce false positive rates.
+      </p>
+
+      <div class="research-tags">
+        <span class="tag">Drone Detection</span>
+        <span class="tag">Computer Vision</span>
+        <span class="tag">Radar Signal Processing</span>
+        <span class="tag">RF / SDR Analysis</span>
+        <span class="tag">Multimodal Fusion</span>
+        <span class="tag">Deep Learning</span>
+        <span class="tag tag--cyan">Security Applications</span>
+      </div>
+    </article>
+
+    <!-- Extracurricular Research -->
+    <div class="extra-research" data-animate data-delay="3">
+      <h3 class="extra-title">Research Roles</h3>
+      <div class="extra-grid">
+        <div class="card extra-card">
+          <h4>Engineering Infrastructure Coordinator</h4>
+          <p class="extra-org">Student Academic League of AI &amp; Data Science · Mackenzie Presbyterian University</p>
+          <p class="extra-desc">Orchestrated DevOps pipelines for ML model development and deployment; implemented synthetic data generation and continuous performance monitoring to detect model drift.</p>
+        </div>
+        <div class="card extra-card">
+          <h4>Research Assistant</h4>
+          <p class="extra-org">Centre of Regulation and Democracy · Insper Research Institute</p>
+          <p class="extra-desc">Applied machine learning, NLP, and web scraping to bridge computer science and legal research, streamlining juridical research processes.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .research-card {
+    padding: 2rem;
+  }
+  .featured-card {
+    border-color: rgba(59, 130, 246, 0.3);
+    background: linear-gradient(135deg, rgba(8, 14, 32, 0.98), rgba(10, 20, 45, 0.95));
+  }
+
+  .research-header { margin-bottom: 1.25rem; }
+
+  .research-badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .research-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3em 0.8em;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    border-radius: var(--radius-pill);
+  }
+  .badge--ieee {
+    background: rgba(37, 99, 235, 0.15);
+    border: 1px solid rgba(37, 99, 235, 0.4);
+    color: var(--c-blue-300);
+  }
+  .badge--masters {
+    background: rgba(139, 92, 246, 0.12);
+    border: 1px solid rgba(139, 92, 246, 0.35);
+    color: #c4b5fd;
+  }
+
+  .research-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--c-text-3);
+    margin-left: auto;
+  }
+
+  .research-title {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 700;
+    color: var(--c-text-1);
+    line-height: 1.4;
+    margin-bottom: 0.6rem;
+  }
+
+  .research-authors {
+    font-size: 0.875rem;
+    color: var(--c-text-2);
+  }
+  .research-authors strong { color: var(--c-blue-400); }
+  .funding-note {
+    color: var(--c-text-3);
+    font-size: 0.8rem;
+    font-style: italic;
+  }
+  .orcid-link { display: inline-flex; align-items: center; margin: 0 0.2rem; vertical-align: middle; }
+
+  .research-abstract {
+    font-size: 0.9375rem;
+    color: var(--c-text-2);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+  .research-abstract em { color: var(--c-blue-300); font-style: normal; font-weight: 500; }
+
+  /* Expandable findings */
+  .abstract-expand {
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .abstract-expand summary {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--c-blue-400);
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+  }
+  .abstract-expand summary::-webkit-details-marker { display: none; }
+  .abstract-expand summary::before {
+    content: '+ ';
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .abstract-expand[open] summary::before { content: '− '; }
+
+  .findings-list {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    list-style: disc;
+    padding-left: 1.5rem;
+  }
+  .findings-list li {
+    font-size: 0.875rem;
+    color: var(--c-text-2);
+    line-height: 1.5;
+  }
+  .findings-list em { color: #f87171; font-style: normal; }
+
+  .research-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  /* Extra research */
+  .extra-research { margin-top: 3rem; }
+  .extra-title {
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--c-text-3);
+    margin-bottom: 1rem;
+  }
+  .extra-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .extra-card h4 {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--c-text-1);
+    margin-bottom: 0.3rem;
+  }
+  .extra-org {
+    font-size: 0.8rem;
+    color: var(--c-blue-400);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  .extra-desc {
+    font-size: 0.85rem;
+    color: var(--c-text-2);
+    line-height: 1.55;
+  }
+
+  @media (max-width: 700px) {
+    .extra-grid { grid-template-columns: 1fr; }
+    .research-card { padding: 1.25rem; }
+    .research-year { margin-left: 0; }
+  }
+</style>

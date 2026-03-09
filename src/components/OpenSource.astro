@@ -1,0 +1,313 @@
+---
+interface OwnProject {
+  name:     string;
+  lang:     string;
+  langColor: string;
+  desc:     string;
+  url:      string;
+  pypi?:    string;
+}
+
+interface ContribProject {
+  name:     string;
+  url:      string;
+  desc:     string;
+}
+
+const ownProjects: OwnProject[] = [
+  {
+    name:      'temporal-adjusters-py',
+    lang:      'Python',
+    langColor: 'var(--c-blue-400)',
+    desc:      'Temporal date adjustment utilities for Python — port of Java\'s TemporalAdjusters.',
+    url:       'https://github.com/gtkacz/temporal_adjusters_py',
+    pypi:      'https://pypi.org/project/temporal-adjuster/',
+  },
+  {
+    name:      'smart-commit-rs',
+    lang:      'Rust',
+    langColor: '#fb923c',
+    desc:      'Blazing-fast CLI tool for generating structured, conventional commit messages.',
+    url:       'https://github.com/gtkacz/smart-commit-rs',
+  },
+  {
+    name:      'coverage-pre-commit',
+    lang:      'Python',
+    langColor: 'var(--c-blue-400)',
+    desc:      'Pre-commit hook that enforces test coverage thresholds to prevent coverage regression.',
+    url:       'https://github.com/gtkacz/coverage-pre-commit',
+  },
+  {
+    name:      'pyanalyze-action',
+    lang:      'GitHub Action',
+    langColor: 'var(--c-cyan)',
+    desc:      'GitHub Action for running pyanalyze static analysis as part of CI pipelines.',
+    url:       'https://github.com/gtkacz/pyanalyze-action',
+  },
+  {
+    name:      'vulture-action',
+    lang:      'GitHub Action',
+    langColor: 'var(--c-cyan)',
+    desc:      'GitHub Action for vulture dead-code detection integrated into CI.',
+    url:       'https://github.com/gtkacz/vulture-action',
+  },
+  {
+    name:      'pynimbar',
+    lang:      'Python',
+    langColor: 'var(--c-blue-400)',
+    desc:      'Lightweight, no-dependency progress bar library for Python terminal applications.',
+    url:       'https://github.com/gtkacz/pynimbar',
+    pypi:      'https://pypi.org/project/pynimbar/',
+  },
+  {
+    name:      'sort.me',
+    lang:      'TypeScript',
+    langColor: '#60a5fa',
+    desc:      'Interactive sorting algorithm visualizer built for learning and demonstration.',
+    url:       'https://github.com/gtkacz/sort.me',
+  },
+  {
+    name:      'ue4ss_modmanager',
+    lang:      'TypeScript',
+    langColor: '#60a5fa',
+    desc:      'GUI mod manager for Unreal Engine 4/5 scripting system (UE4SS) mods.',
+    url:       'https://github.com/gtkacz/ue4ss_modmanager',
+  },
+];
+
+const contribProjects: ContribProject[] = [
+  { name: 'Ruff',                    url: 'https://github.com/astral-sh/ruff',                    desc: 'An extremely fast Python linter and formatter, written in Rust' },
+  { name: 'Django REST Framework',   url: 'https://github.com/encode/django-rest-framework',       desc: 'Powerful and flexible toolkit for building Web APIs in Django' },
+  { name: 'OpenBB',                  url: 'https://github.com/OpenBB-finance/OpenBB',              desc: 'Investment research platform — the open-source Bloomberg alternative' },
+  { name: 'python-dateutil',         url: 'https://github.com/dateutil/dateutil',                  desc: 'Powerful extensions to the standard datetime module' },
+  { name: 'whenever',                url: 'https://github.com/ariebovenberg/whenever',             desc: 'Modern datetime library for Python with clear timezone semantics' },
+  { name: 'more-itertools',          url: 'https://github.com/more-itertools/more-itertools',      desc: 'More routines for operating on iterables, beyond itertools' },
+  { name: 'python-box',              url: 'https://github.com/cdgriffith/Box',                     desc: 'Python dictionaries with advanced dot notation access' },
+  { name: 'boltons',                 url: 'https://github.com/mahmoud/boltons',                    desc: 'Pure-Python utilities that should be builtins' },
+  { name: 'python-telegram-bot',     url: 'https://github.com/python-telegram-bot/python-telegram-bot', desc: 'Wrapper library for the Telegram Bot API' },
+  { name: 'Sherlock',                url: 'https://github.com/sherlock-project/sherlock',          desc: 'Find social media accounts by username across social networks' },
+  { name: 'brutils',                 url: 'https://github.com/brazilian-utils/brutils-python',     desc: 'Utility library for Brazilian-specific data formats (CPF, CNPJ, etc.)' },
+  { name: 'github-readme-stats',     url: 'https://github.com/anuraghazra/github-readme-stats',   desc: 'Dynamically generated GitHub stats widgets for your readmes' },
+  { name: 'NanoCell',                url: 'https://github.com/gtkacz/nanocell',                    desc: 'Minimal spreadsheet computation engine' },
+];
+---
+
+<section class="section" id="oss">
+  <div class="container">
+    <header data-animate>
+      <p class="section-label">// open source</p>
+      <h2 class="section-title">FOSS Contributions</h2>
+    </header>
+
+    <p class="oss-intro" data-animate>
+      I'm a strong believer in open-source software. I author and maintain libraries used by
+      developers worldwide, and regularly contribute bug fixes, features, and documentation
+      to projects I rely on every day.
+    </p>
+
+    <!-- Creator / Maintainer -->
+    <div data-animate data-delay="1">
+      <h3 class="oss-section-title">
+        <span class="oss-icon" aria-hidden="true">★</span>
+        Creator &amp; Core Maintainer
+      </h3>
+      <div class="own-projects-grid">
+        {ownProjects.map((p) => (
+          <a href={p.url} target="_blank" rel="noopener noreferrer" class="card own-project-card">
+            <div class="opc-header">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="opc-icon">
+                <path d="m9 18 6-6-6-6"/>
+              </svg>
+              <span class="opc-name">{p.name}</span>
+              <span class="opc-lang" style={`--lang-color: ${p.langColor}`}>{p.lang}</span>
+            </div>
+            <p class="opc-desc">{p.desc}</p>
+            <div class="opc-links">
+              <span class="opc-github-link">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                </svg>
+                GitHub
+              </span>
+              {p.pypi && (
+                <span class="opc-pypi-link">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.5 0C9.3 0 7.3.8 7.3.8v3.4s1.2-.7 3.5-.7c2.4 0 3.5.8 3.5 2.5v.9h-3c-3.2 0-5.3 2-5.3 5 0 3.1 1.9 5 5 5 2.3 0 3.5-1.3 3.5-1.3v1h3.5V6c0-3.5-2.2-6-6-6zm.8 10.6c0 1.7-1.1 2.7-2.3 2.7-1 0-1.5-.6-1.5-1.5 0-1.3.9-2 2.5-2h1.3v.8z"/></svg>
+                  PyPI
+                </span>
+              )}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Contributor -->
+    <div data-animate data-delay="2" style="margin-top: 3.5rem;">
+      <h3 class="oss-section-title">
+        <span class="oss-icon" aria-hidden="true">◆</span>
+        Notable Contributions
+      </h3>
+      <div class="contrib-grid">
+        {contribProjects.map((p) => (
+          <a href={p.url} target="_blank" rel="noopener noreferrer" class="contrib-item card">
+            <span class="contrib-name">{p.name}</span>
+            <span class="contrib-desc">{p.desc}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <div class="oss-cta" data-animate data-delay="3">
+      <a href="https://github.com/gtkacz" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+        </svg>
+        View all on GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .oss-intro {
+    max-width: 65ch;
+    color: var(--c-text-2);
+    font-size: 1.0125rem;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+  }
+
+  .oss-section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.8rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--c-text-3);
+    margin-bottom: 1.25rem;
+  }
+  .oss-icon { color: var(--c-blue-400); font-size: 0.9rem; }
+
+  /* Own projects grid */
+  .own-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .own-project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    text-decoration: none;
+    padding: 1.1rem 1.25rem;
+  }
+  .own-project-card:hover { text-decoration: none; }
+
+  .opc-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .opc-icon { color: var(--c-blue-500); flex-shrink: 0; }
+  .opc-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--c-text-1);
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .opc-lang {
+    font-size: 0.65rem;
+    padding: 0.15em 0.5em;
+    border-radius: var(--radius-pill);
+    background: rgba(0,0,0,0.3);
+    color: var(--lang-color, var(--c-blue-400));
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    flex-shrink: 0;
+    border: 1px solid currentColor;
+    opacity: 0.8;
+  }
+
+  .opc-desc {
+    font-size: 0.8rem;
+    color: var(--c-text-2);
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  .opc-links {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: auto;
+  }
+  .opc-github-link,
+  .opc-pypi-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.7rem;
+    color: var(--c-text-3);
+    font-family: 'JetBrains Mono', monospace;
+    transition: color var(--transition);
+  }
+  .own-project-card:hover .opc-github-link,
+  .own-project-card:hover .opc-pypi-link { color: var(--c-blue-400); }
+
+  /* Contrib grid */
+  .contrib-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+  }
+
+  .contrib-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.875rem 1rem;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+  }
+  .contrib-item:hover { text-decoration: none; }
+
+  .contrib-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--c-blue-400);
+    transition: color var(--transition);
+  }
+  .contrib-item:hover .contrib-name { color: var(--c-blue-300); }
+
+  .contrib-desc {
+    font-size: 0.78rem;
+    color: var(--c-text-3);
+    line-height: 1.4;
+  }
+
+  .oss-cta {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (max-width: 1024px) {
+    .own-projects-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .contrib-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 500px) {
+    .own-projects-grid      { grid-template-columns: 1fr; }
+    .contrib-grid      { grid-template-columns: 1fr; }
+  }
+</style>

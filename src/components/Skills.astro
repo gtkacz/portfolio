@@ -1,0 +1,145 @@
+---
+interface SkillGroup {
+  label:  string;
+  icon:   string;
+  color:  'blue' | 'cyan' | 'purple' | 'green';
+  skills: string[];
+}
+
+const groups: SkillGroup[] = [
+  {
+    label:  'Languages',
+    icon:   '{ }',
+    color:  'blue',
+    skills: ['Python', 'TypeScript', 'JavaScript', 'Java', 'Rust', 'PHP', 'SQL', 'Bash'],
+  },
+  {
+    label:  'Frameworks & Libraries',
+    icon:   '⚙',
+    color:  'cyan',
+    skills: [
+      'Django', 'Django REST Framework', 'Flask', 'Pydantic', 'Graphene',
+      'Vue.js', 'Nuxt', 'Vite', 'Node.js',
+      'Spring Boot', 'jOOQ', 'Thymeleaf',
+      'PyTorch', 'scikit-learn', 'OpenCV', 'HuggingFace', 'Pandas', 'Celery',
+    ],
+  },
+  {
+    label:  'Cloud & DevOps',
+    icon:   '☁',
+    color:  'blue',
+    skills: [
+      'AWS (S3, RDS, EC2, Elastic Beanstalk, CloudWatch, Route 53, CodePipeline)',
+      'Docker', 'Docker Compose', 'GitHub Actions', 'GitLab CI/CD', 'Travis CI',
+      'Apache Kafka', 'Apache Airflow', 'Gunicorn', 'Unix/Linux', 'GNU Make',
+    ],
+  },
+  {
+    label:  'Databases',
+    icon:   '🗄',
+    color:  'green',
+    skills: ['PostgreSQL', 'MySQL', 'DuckDB', 'SQLite', 'Microsoft SQL Server', 'H2', 'MongoDB', 'Redis'],
+  },
+  {
+    label:  'AI & Machine Learning',
+    icon:   '🤖',
+    color:  'purple',
+    skills: [
+      'Machine Learning', 'Deep Learning', 'Computer Vision', 'NLP',
+      'RAG', 'LLM Fine-Tuning', 'Zero-Shot Classification',
+      'Cross-Encoder Rerankers', 'Natural Computing',
+      'Mathematical Modelling', 'Statistical Analysis', 'Data Engineering',
+    ],
+  },
+  {
+    label:  'Engineering Practices',
+    icon:   '📐',
+    color:  'blue',
+    skills: [
+      'SOLID Principles', 'GRASP', 'Clean Architecture', 'REST API Design',
+      'GraphQL', 'Scrum', 'Kanban', 'TDD', 'CI/CD', 'Database Optimization',
+    ],
+  },
+];
+
+const colorMap: Record<string, string> = {
+  blue:   'tag',
+  cyan:   'tag tag--cyan',
+  purple: 'tag tag--purple',
+  green:  'tag tag--green',
+};
+---
+
+<section class="section section--alt" id="skills">
+  <div class="container">
+    <header data-animate>
+      <p class="section-label">// skills</p>
+      <h2 class="section-title">Technical Skills</h2>
+    </header>
+
+    <div class="skills-grid">
+      {groups.map((group, i) => (
+        <div class="card skill-group" data-animate data-delay={String((i % 3) + 1)}>
+          <div class="group-header">
+            <span class="group-icon" aria-hidden="true">{group.icon}</span>
+            <h3 class="group-label">{group.label}</h3>
+          </div>
+          <div class="group-tags">
+            {group.skills.map((skill) => (
+              <span class={colorMap[group.color]}>{skill}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .skill-group { display: flex; flex-direction: column; gap: 1rem; }
+
+  .group-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  .group-icon {
+    font-size: 1.1rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--c-blue-400);
+    line-height: 1;
+  }
+
+  .group-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--c-text-1);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .group-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-content: flex-start;
+  }
+
+  @media (max-width: 1024px) {
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 600px) {
+    .skills-grid { grid-template-columns: 1fr; }
+  }
+</style>
