@@ -3,6 +3,7 @@ interface Job {
   period:   string;
   role:      string;
   company:   string;
+  companyUrl: string;
   location:  string;
   type?:     string;
   bullets:   string[];
@@ -15,6 +16,7 @@ const jobs: Job[] = [
     period:   '2024 – Present',
     role:     'Full Stack Software Engineer',
     company:  'FlxPoint',
+    companyUrl: 'https://flxpoint.com/',
     location: 'Jacksonville, FL, USA · Remote',
     current:  true,
     bullets: [
@@ -30,6 +32,7 @@ const jobs: Job[] = [
     period:  '2024',
     role:    'Software Engineer II',
     company: 'Libra Energia',
+    companyUrl: 'https://www.libraenergia.com.br/',
     location: 'São Paulo, SP, Brazil',
     bullets: [
       'Developed and maintained a portfolio of internal applications: websites, risk curve generators, and contract pricing tools.',
@@ -43,6 +46,7 @@ const jobs: Job[] = [
     period:  '2022 – 2024',
     role:    'Software Engineer',
     company: 'Giant Steps Capital',
+    companyUrl: 'https://www.giantstepscapital.com/',
     location: 'São Paulo, SP, Brazil',
     bullets: [
       'Built post-trade systems — web tools, REST APIs, and data conciliation & automated billing routines — for Latin America\'s largest quantitative asset manager.',
@@ -56,6 +60,7 @@ const jobs: Job[] = [
     period:  '2022',
     role:    'Junior Full Stack Developer',
     company: 'scandiweb',
+    companyUrl: 'https://scandiweb.com/',
     location: 'Riga, Latvia · Remote',
     bullets: [
       'Developed high-performance eCommerce marketplaces using Magento, Akeneo PIM, and ScandiPWA.',
@@ -90,7 +95,7 @@ const jobs: Job[] = [
             <h3 class="tl-role">{job.role}</h3>
 
             <div class="tl-company">
-              <span class="company-name">{job.company}</span>
+              <a class="company-name" href={job.companyUrl} target="_blank" rel="noopener noreferrer">{job.company}</a>
               <span class="company-sep">·</span>
               <span class="company-loc">{job.location}</span>
             </div>
@@ -202,6 +207,7 @@ const jobs: Job[] = [
     color: var(--c-blue-400);
     font-weight: 600;
   }
+  .company-name:hover { color: var(--c-blue-300); }
   .company-sep { color: var(--c-text-3); }
   .company-loc {
     color: var(--c-text-3);

@@ -71,7 +71,8 @@ const highlights = [
           University, where my research focuses on multimodal drone detection using computer vision,
           radar, and radio frequency analysis. My undergraduate thesis — a quantitative study on
           image preprocessing for dermatological AI — is under review at
-          <em>IEEE Transactions on Image Processing</em>.
+          <em>IEEE Transactions on Image Processing</em>. I'm also a member of
+          <strong>IEEE</strong> and <strong>SBC</strong> (Brazilian Computer Society).
         </p>
 
         <div class="about-highlights">
@@ -101,19 +102,33 @@ const highlights = [
           </svg>
           <div>
             <p class="location-city">São Paulo, SP</p>
-            <p class="location-country">Brazil · GMT-3</p>
+            <p class="location-country">Brazil · UTC-3</p>
           </div>
         </div>
 
-        <div class="about-ieee card">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--c-blue-400)" stroke-width="2" aria-hidden="true">
-            <rect x="3" y="8" width="18" height="13" rx="2"/>
-            <path d="M8 8V6a4 4 0 0 1 8 0v2"/>
-            <circle cx="12" cy="14" r="2"/>
+        <div class="about-member card">
+          <svg class="member-logo" width="56" height="18" viewBox="0 0 64 20" fill="none" aria-hidden="true">
+            <path d="M8 2 14 10 8 18 2 10 8 2Z" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M8 6v8M5 10h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <text x="20" y="13.5" font-size="9" font-family="Arial, sans-serif" font-weight="700" fill="currentColor">IEEE</text>
           </svg>
           <div>
-            <p class="location-city">IEEE Member</p>
-            <p class="location-country">ORCID: 0009-0004-3619-4561</p>
+            <p class="location-city">Member</p>
+            <p class="location-country">Institute of Electrical and Electronics Engineers</p>
+          </div>
+        </div>
+
+        <div class="about-member card">
+          <svg class="member-logo" width="48" height="18" viewBox="0 0 54 20" fill="none" aria-hidden="true">
+            <circle cx="8" cy="10" r="2.4" fill="currentColor"/>
+            <circle cx="14" cy="6" r="1.8" fill="currentColor"/>
+            <circle cx="14" cy="14" r="1.8" fill="currentColor"/>
+            <path d="M8 10h6M8 10l6-4M8 10l6 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            <text x="22" y="13.5" font-size="9" font-family="Arial, sans-serif" font-weight="700" fill="currentColor">SBC</text>
+          </svg>
+          <div>
+            <p class="location-city">Member</p>
+            <p class="location-country">Brazilian Computer Society</p>
           </div>
         </div>
       </div>
@@ -183,14 +198,18 @@ const highlights = [
   }
 
   .about-location,
-  .about-ieee {
+  .about-member {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     padding: 0.875rem 1rem;
   }
   .about-location svg,
-  .about-ieee svg { flex-shrink: 0; }
+  .about-member svg { flex-shrink: 0; }
+
+  .member-logo {
+    color: var(--c-blue-400);
+  }
   .location-city {
     font-size: 0.875rem;
     font-weight: 600;
@@ -207,7 +226,7 @@ const highlights = [
     .about-stats { position: static; display: grid; grid-template-columns: 1fr 1fr; }
     .stat-card { grid-column: span 1; }
     .about-location,
-    .about-ieee { grid-column: span 1; }
+    .about-member { grid-column: span 1; }
   }
 
   @media (max-width: 480px) {
